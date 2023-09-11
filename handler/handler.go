@@ -11,6 +11,10 @@ func Ping(c *gin.Context) {
 	c.String(http.StatusOK, "pong")
 }
 
+func Test(c *gin.Context){
+	c.String(http.StatusOK, "test")
+}
+
 func ErrRouter(c *gin.Context) {
 	c.String(http.StatusBadRequest, "url err")
 }
