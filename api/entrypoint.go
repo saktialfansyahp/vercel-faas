@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/kirito41dd/vercel-faas/controllers"
 	"github.com/kirito41dd/vercel-faas/handler"
 
 	"github.com/gin-gonic/gin"
@@ -17,6 +18,7 @@ var (
 func registerRouter(r *gin.RouterGroup) {
 	r.GET("/api/ping", handler.Ping)
 	r.GET("/api/test", handler.Test)
+	r.GET("/api/controller", controllers.PingController)
 	// for nostr NIP-05
 	r.GET("/.well-known/nostr.json", handler.Cors, handler.NIP05)
 }
